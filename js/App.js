@@ -11,19 +11,34 @@
             name: 'Azurite',
             price: '20',
             canPurchase: true,
-            soldOut: false
+            soldOut: false,
+            images:[
+                "images/gem-01.gif",
+                "images/gem-02.gif",
+                "images/gem-03.gif"
+            ]
         },
         {
             name: 'BloodStone',
-            price: '20',
+            price: '25',
             canPurchase: true,
-            soldOut: false
+            soldOut: false,
+            images:[
+                "images/gem-04.gif",
+                "images/gem-05.gif",
+                "images/gem-06.gif"
+            ]
         },
         {
             name: 'Zircon',
-            price: '20',
+            price: '50',
             canPurchase: true,
-            soldOut: false
+            soldOut: false,
+            images:[
+                "images/gem-07.gif",
+                "images/gem-08.gif",
+                "images/gem-09.gif"
+            ]
         }
     ];
 
