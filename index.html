@@ -9,8 +9,11 @@
     <h1>{{"Hello, "+"Angular!"}}</h1>
 
     <div ng-controller="StoreController as store">
-        <h2>Product Name {{store.product.name}}</h2>
-        <h2>Product Price {{store.product.price}}</h2>
+        <div ng-hide="store.product.soldOut">
+            <h2>Product Name {{store.product.name}}</h2>
+            <h2>Product Price {{store.product.price}}</h2>
+            <button ng-show="store.product.canPurchase">Add To Cart</button>
+        </div>
     </div>
 
     <script type="text/javascript" src="js/libs/angular.js"></script>
