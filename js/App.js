@@ -3,15 +3,29 @@
 
     var app = angular.module('store',[]);
     app.controller('StoreController', function () {
-        this.product = gem;
+        this.products = gems;
     });
 
-    var gem = {
-        name: 'Azurite',
-        price: '20',
-        canPurchase: false,
-        soldOut: true
-    };
+    var gems =[
+        {
+            name: 'Azurite',
+            price: '20',
+            canPurchase: true,
+            soldOut: false
+        },
+        {
+            name: 'BloodStone',
+            price: '20',
+            canPurchase: true,
+            soldOut: false
+        },
+        {
+            name: 'Zircon',
+            price: '20',
+            canPurchase: true,
+            soldOut: false
+        }
+    ];
 
 })();
 
