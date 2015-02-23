@@ -1,0 +1,32 @@
+<form name="reviewForm" ng-submit="reviewForm.$valid && formCtrl.submitReview(product)" novalidate>
+
+    <h4>Submit a Review</h4>
+    <blockquote>
+        <strong>{{formCtrl.review.stars}} Stars</strong>
+        {{formCtrl.review.body}}
+        <cite>-by {{formCtrl.review.author}}</cite>
+    </blockquote>
+    <fieldset class="form-group">
+        <select class="form-control" ng-model="formCtrl.review.stars"
+                ng-options="stars for stars in [5,4,3,2,1]" required>
+            <option value="">Rate this product</option>
+        </select>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <textarea class="form-control" placeholder="Write a short review"
+                  ng-model="formCtrl.review.body" required>
+
+        </textarea>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <input type="email" class="form-control" placeholder="example@domain.com"
+               ng-model="formCtrl.review.author" required>
+
+    </fieldset>
+    <fieldset class="form-group">
+        <input type="submit" class="btn btn-primary pull-right">
+    </fieldset>
+
+</form>

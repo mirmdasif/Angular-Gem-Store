@@ -1,0 +1,31 @@
+<div role="tabpanel">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation">
+            <a href="#description-{{$index}}"
+               aria-controls="description" role="tab" data-toggle="tab">Description</a>
+        </li>
+        <li role="presentation">
+            <a href="#spec-{{$index}}"
+               aria-controls="Spec" role="tab" data-toggle="tab">Spec</a>
+        </li>
+        <li role="presentation">
+            <a href="#reviews-{{$index}}"
+               aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane" id="description-{{$index}}">
+            <product-description></product-description>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="spec-{{$index}}">
+            <product-specs></product-specs>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="reviews-{{$index}}">
+            <product-reviews></product-reviews>
+        </div>
+    </div>
+
+</div>

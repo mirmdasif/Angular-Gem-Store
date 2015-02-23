@@ -27,97 +27,13 @@
                 <div class = "panel panel-default">
 
                     <div class="panel-heading">
-                        <h1>
-                            {{product.name}}
-                            <em class="pull-right">{{product.price | currency}}</em>
-                        </h1>
+                       <product-heading></product-heading>
                     </div>
                     <div class="panel-body">
-                        <div id="carousel-{{$index}}" class="carousel slide">
-                            <!-- Carousel items -->
-                            <div class="carousel-inner">
-                                <div class="item " ng-class="{active : $index>1}" ng-repeat="image in product.images">
-                                    <img class="img-responsive center-block" ng-src="{{image}}">
-                                </div>
-                            </div>
-                            <!-- Carousel nav -->
-                            <a class="carousel-control left" href="#carousel-{{$index}}" data-slide="prev">&lsaquo;</a>
-                            <a class="carousel-control right" href="#carousel-{{$index}}" data-slide="next">&rsaquo;</a>
-                        </div>
+                        <product-images></product-images>
                     </div>
                     <div class="panel-body">
-                        <div role="tabpanel">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation">
-                                    <a href="#description-{{$index}}"
-                                       aria-controls="description" role="tab" data-toggle="tab">Description</a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#spec-{{$index}}"
-                                       aria-controls="Spec" role="tab" data-toggle="tab">Spec</a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#reviews-{{$index}}"
-                                       aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a>
-                                </li>
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane" id="description-{{$index}}">
-                                    <product-description></product-description>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="spec-{{$index}}">
-                                    <product-specs></product-specs>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="reviews-{{$index}}">
-                                    <h4>Reviews</h4>
-                                    <li ng-repeat="review in product.reviews">
-                                        <blockquote>
-                                            <strong>{{review.stars}} Stars</strong>
-                                            {{review.body}}
-                                            <cite> by {{review.author}} on {{review.createdOn | date}}</cite>
-                                        </blockquote>
-                                    </li>
-                                    <!--Review Form-->
-                                    <form name="reviewForm" ng-controller="ReviewFormController as formCtrl"
-                                          ng-submit="reviewForm.$valid && formCtrl.submitReview(product)" novalidate>
-
-                                        <h4>Submit a Review</h4>
-                                        <blockquote>
-                                            <strong>{{formCtrl.review.stars}} Stars</strong>
-                                            {{formCtrl.review.body}}
-                                            <cite>-by {{formCtrl.review.author}}</cite>
-                                        </blockquote>
-                                        <fieldset class="form-group">
-                                            <select class="form-control" ng-model="formCtrl.review.stars"
-                                                    ng-options="stars for stars in [5,4,3,2,1]" required>
-                                                <option value="">Rate this product</option>
-                                            </select>
-                                        </fieldset>
-
-                                        <fieldset class="form-group">
-                                            <textarea class="form-control" placeholder="Write a short review"
-                                                      ng-model="formCtrl.review.body" required>
-
-                                            </textarea>
-                                        </fieldset>
-
-                                        <fieldset class="form-group">
-                                            <input type="email" class="form-control" placeholder="example@domain.com"
-                                                    ng-model="formCtrl.review.author" required>
-
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <input type="submit" class="btn btn-primary pull-right">
-                                        </fieldset>
-
-                                    </form>
-                                </div>
-                            </div>
-
-                        </div>
+                        <product-tabs></product-tabs>
                     </div>
                 </div>
             </div>

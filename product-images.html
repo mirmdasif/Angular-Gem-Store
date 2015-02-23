@@ -1,0 +1,11 @@
+<div id="carousel-{{$index}}" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+        <div class="item " ng-class="{active : $index>1}" ng-repeat="image in product.images">
+            <img class="img-responsive center-block" ng-src="{{image}}">
+        </div>
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#carousel-{{$index}}" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#carousel-{{$index}}" data-slide="next">&rsaquo;</a>
+</div>
