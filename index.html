@@ -65,8 +65,12 @@
 
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane" id="description-{{$index}}">Profile</div>
-                                <div role="tabpanel" class="tab-pane" id="spec-{{$index}}">Messages</div>
+                                <div role="tabpanel" class="tab-pane" id="description-{{$index}}">
+                                    <product-description></product-description>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="spec-{{$index}}">
+                                    <product-specs></product-specs>
+                                </div>
                                 <div role="tabpanel" class="tab-pane" id="reviews-{{$index}}">
                                     <h4>Reviews</h4>
                                     <li ng-repeat="review in product.reviews">
