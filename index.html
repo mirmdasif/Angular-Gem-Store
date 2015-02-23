@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <title>Hello Angular</title>
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>
+
+    <style type="text/css">
+        .ng-dirty.ng-invalid {
+            border-color: red;
+        }
+        .ng-dirty.ng-valid {
+            border-color: #008000;
+        }
+    </style>
 </head>
 <body>
     <div class="jumbotron">
@@ -64,11 +73,12 @@
                                         <blockquote>
                                             <strong>{{review.stars}} Stars</strong>
                                             {{review.body}}
+                                            <cite> by {{review.author}} on {{review.createdOn | date}}</cite>
                                         </blockquote>
                                     </li>
                                     <!--Review Form-->
-                                    <form ng-controller="ReviewFormController as formCtrl"
-                                          ng-submit="formCtrl.submitReview(product)">
+                                    <form name="reviewForm" ng-controller="ReviewFormController as formCtrl"
+                                          ng-submit="reviewForm.$valid && formCtrl.submitReview(product)" novalidate>
 
                                         <h4>Submit a Review</h4>
                                         <blockquote>
@@ -78,21 +88,21 @@
                                         </blockquote>
                                         <fieldset class="form-group">
                                             <select class="form-control" ng-model="formCtrl.review.stars"
-                                                    ng-options="stars for stars in [5,4,3,2,1]">
+                                                    ng-options="stars for stars in [5,4,3,2,1]" required>
                                                 <option value="">Rate this product</option>
                                             </select>
                                         </fieldset>
 
                                         <fieldset class="form-group">
                                             <textarea class="form-control" placeholder="Write a short review"
-                                                      ng-model="formCtrl.review.body">
+                                                      ng-model="formCtrl.review.body" required>
 
                                             </textarea>
                                         </fieldset>
 
                                         <fieldset class="form-group">
                                             <input type="email" class="form-control" placeholder="example@domain.com"
-                                                    ng-model="formCtrl.review.author">
+                                                    ng-model="formCtrl.review.author" required>
 
                                         </fieldset>
                                         <fieldset class="form-group">
